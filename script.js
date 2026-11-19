@@ -14,14 +14,21 @@ async function getNews(category = 'general') {
     NewsContainer.innerHTML = '<p>Laddar nyheter...</p>';
 
     try {
-        const response = await fetch (
-            `${API_URL}?
-            category=${category}&lang=sv&country=se&max=10&apikey=${API_KEY}`
-        );
+      const url = new URL(API_URL);
+      url.search = new URLSearchParams({
+    lang: "sv",
+    country: "se",
+    max: "10",
+    q: "General",
+    apikey: API_KEY
+});
 
-        if (!response.ok) {
-            throw new Error ('Kunde inte hämta nyheter' + response.status);
+const response = await fetch(`https://gnews.io/api/v4/top-headlines?${params}`);
+
+if (!response.ok) {
+        throw new Error ('Kunde inte hämta nyheter' + response.status);
         }
+
 
         const data = await response.json();
 
@@ -32,6 +39,9 @@ async function getNews(category = 'general') {
         console.log(error);
     }
 }
+
+        
+
 
 function displayNews(articles) {
     NewsContainer.innerHTML = '';
