@@ -122,4 +122,4 @@ menuBtn.addEventListener('click', () => {
     menuBtn.setAttribute('aria-expanded', String(!IsOpen));
 });
 
-getNews();
+//getNews();
