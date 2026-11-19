@@ -10,33 +10,39 @@ const categoryMenu = document.getElementById('category-menu');
 const API_KEY = '6ae9b71e78af7d330b3d1f98899e1d28';
 const API_URL = 'https://gnews.io/api/v4/top-headlines?lang=sv&country=se&max=10&q=General&apikey=6ae9b71e78af7d330b3d1f98899e1d28';
 
-async function getNews(category = 'general') {
+async function getNews(category = 'general') 
+{
     NewsContainer.innerHTML = '<p>Laddar nyheter...</p>';
 
     try {
       const url = new URL(API_URL);
+
       url.search = new URLSearchParams({
     lang: "sv",
     country: "se",
     max: "4",
-    q: "General",
+    category: category,
     apikey: API_KEY
 });
 
-const response = await fetch(`https://gnews.io/api/v4/top-headlines?${params}`);
+const response = await fetch(url);
 
 if (!response.ok) {
-        throw new Error ('Kunde inte hämta nyheter' + response.status);
+        throw new Error (`HTTP-fel!+ Status: ${response.status}`);
         }
 
 
         const data = await response.json();
+        console.log('API-data:',data);
+
+        // Detta ska rensa laddningstexten
+        NewsContainer.innerHTML = '';
 
         displayNews(data.articles);
 
     } catch (error) {
         NewsContainer.textContent = 'Kunde inte ladda nyheter.';
-        console.log(error);
+        console.log('Fel vid hämtning av nyheter',error);
     }
 }
 
