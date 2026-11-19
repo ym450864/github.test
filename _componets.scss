@@ -1,0 +1,7 @@
+@use 'variable' as *;
+
+.logo {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
