@@ -127,7 +127,7 @@ searchForm.addEventListener('submit', async event => {
 });
 
 menuBtn.addEventListener('click', () => {
-    const IsOpen = menuBtn.getAttribute('Aria-expanded') === 'true';
+    const IsOpen = menuBtn.getAttribute('aria-expanded') === 'true';
     categoryMenu.hidden = IsOpen;
     menuBtn.setAttribute('aria-expanded', String(!IsOpen));
 });
