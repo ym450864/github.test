@@ -10,3 +10,10 @@ body {
     color: $text-color;
     line-height: 1.6;
 }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
