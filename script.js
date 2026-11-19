@@ -85,3 +85,33 @@ categoryBtns.forEach(button => {
     menuBtn.setAttribute('aria-expanded','false');
    });
 });
+
+searchForm.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const searchTerm =
+    searchInput.value.trim();
+
+    if(!searchTerm) return;
+
+    NewsContainer.innerHTML = '<p>Söker nyheter...</p>';
+
+    try {
+        const response = await fetch (
+            `https://gnews.io/api/v4/search?q=${encodeURIComponent(searchTerm)}&lang=sv&country=se&max=10&apikey=${API_KEY}`
+        );
+
+        if (!response.ok) {
+            throw new Error('Sökningen misslyckades');
+        }
+
+        const data = await response.json();
+        displayNews(data.articles);
+
+        sectionTitle.textContent = 'Sökresultat';
+
+    } catch (error) {
+        NewsContainer.textContent = 'Kunde inte söka efter nyheter.';
+        console.log(error);
+    }
+});
