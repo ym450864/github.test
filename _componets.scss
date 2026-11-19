@@ -5,3 +5,22 @@
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+#menu-btn {
+    background-color: $accent-color;
+    color: $card-bg;
+    border: none;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius;
+    font-family: $font-ui;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary-color;
+    }
+
+    &:focus-visible {
+        outline: 3px solid $focus-outline;
+        outline-offset: 3px;
+    }
+}
