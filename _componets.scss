@@ -30,7 +30,7 @@
     color: $primary-color;
     border: 1px solid $accent-color;
     padding: $spacing-sm $spacing-md;
-    border-radius: radius;
+    border-radius: $radius;
     font-family: $font-ui;
     cursor: pointer;
     transition: background-color 0.2s ease;
