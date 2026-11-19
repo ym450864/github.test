@@ -72,3 +72,16 @@ function displayNews(articles) {
         NewsContainer.appendChild(card);
     });
 }
+
+categoryBtns.forEach(button => {
+    button.addEventListener('click', () =>
+   {
+    const category = button.CDATA_SECTION_NODE.category;
+    sectionTitle.textContent = button.textContent;
+
+    getNews(category);
+
+    categoryMenu.hidden = true;
+    menuBtn.setAttribute('aria-expanded','false');
+   });
+});
