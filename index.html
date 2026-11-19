@@ -7,21 +7,16 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+
     <header class="site-header">
-        <button id="menu-btn" aria-expanded="false" aria-controls="category-menu">Meny</button>
-        <h1>Nyhetsportalen</h1>
-        <form id="search-form" role="search">
-            <label for="site-search" class="visually-hidden">Sök nyheter</label>
-            <input type="search"
-            id="site-search"
-            placeholder="Sök nyheter och artiklar"
-            aria-label="Sök på webbplatsen"
-            required>
-            <button type="submit">Sök</button>
-        </form>
+        <div class="header-container">
+            <h1 class="logo">Nyhetsportalen</h1>
 
+        <button id="menu-btn" aria-expanded="false" aria-controls="category-menu">
+            Meny
+        </button>
 
-    <!--Navigeringsmeny-->
+        <!--Navigation med kategorier-->
     <nav id="category-menu" hidden>
         <ul>
             <li><button class="cat-btn" data-category="general">Almänna nyheter</button></li>
@@ -30,6 +25,20 @@
             <li><button class="cat-btn" data-category="sports">Sport</button></li>
         </ul>
     </nav>
+ </div>
+
+        <!--Sök-->
+        <form id="search-form" class="search-form" role="search">
+            <label for="site-search" class="visually-hidden">Sök nyheter</label>
+            <input type="search"
+            id="site-search"
+            placeholder="Sök nyheter och artiklar"
+            aria-label="Sök på webbplatsen"
+            required>
+            <button type="submit">Sök</button>
+        </form>
+    </header>
+
     <main>
         <section id="news-conatiner" aria-label="Nyhetsartiklar"></section>
     </main>
