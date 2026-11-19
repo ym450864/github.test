@@ -121,3 +121,5 @@ menuBtn.addEventListener('click', () => {
     categoryMenu.hidden = IsOpen;
     menuBtn.setAttribute('aria-expanded, !IsOpen');
 });
+
+getNews();
