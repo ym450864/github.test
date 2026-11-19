@@ -115,3 +115,9 @@ searchForm.addEventListener('submit', async event => {
         console.log(error);
     }
 });
+
+menuBtn.addEventListener('click', () => {
+    const IsOpen = menuBtn.getAttribute('Aria-expanded') === 'true';
+    categoryMenu.hidden = IsOpen;
+    menuBtn.setAttribute('aria-expanded, !IsOpen');
+});
