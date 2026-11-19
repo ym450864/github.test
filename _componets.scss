@@ -46,3 +46,41 @@
     }
 
 }
+
+.search-form {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+
+    input {
+        padding: $spacing-sm;
+        border: 1px solid $text-muted;
+        border-radius: $radius;
+        font-family: $font-main;
+        flex: 1;
+
+        &:focus-visible {
+            outline: 3px solid $focus-outline;
+            outline-offset: 2px;
+        }
+    }
+
+    button {
+        background-color: $accent-color;
+        color: $card-bg;
+        border: none;
+        border-radius: $radius;
+        padding: $spacing-sm $spacing-md;
+        font-family: $font-ui;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $primary-color;
+        }
+
+        &:focus-visible {
+            outline: 3px solid $focus-outline;
+            outline-offset: 3px;
+        }
+    }
+}
