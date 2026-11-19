@@ -32,3 +32,43 @@ async function getNews(category = 'general') {
         console.log(error);
     }
 }
+
+function displayNews(articles) {
+    NewsContainer.innerHTML = '';
+
+    if (!articles || articles.length === 0 ) 
+        {
+
+        NewsContainer.textContent = 'inga nyheter hittades';
+        return;
+
+    }
+
+    articles.forEach(article => {
+        const card = document.createElement('article');
+        card.classList.add('news-card');
+
+        const image = document.createElement('img');
+        image.src = article.image || 'https://placehold.co/600x400';
+        image.alt = '';
+
+        const content = document.createElement('div');
+        content.classList.add('news-content');
+
+        const title = document.createElement('h3');
+        title.textContent = article.title;
+
+        const description = document.createElement('p');
+        description.textContent = article.description || '';
+
+        const link = document.createElement('a');
+        link.href = article.url;
+        link.textContent = 'Läs mer'
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+
+        content.append(title, description, link);
+        card.append(image, content);
+        NewsContainer.appendChild(card);
+    });
+}
