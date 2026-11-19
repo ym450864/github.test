@@ -8,11 +8,10 @@
 <body>
     <header class="site-header">
         <h1>Nyhetsportalen</h1>
-        <form role="search">
+        <form id="search-form" role="search">
             <label for="site-search" class="visually-hidden">Sök nyheter</label>
             <input type="search"
             id="site-search"
-            name="search"
             placeholder="Sök nyheter och artiklar"
             aria-label="Sök på webbplatsen"
             required>
@@ -21,22 +20,14 @@
 
 
     <!--Navigeringsmeny-->
-    <nav aria-label="Huvudmeny">
-        <button type="button"
-        id="menu-btn"
-        aria-expanded="false"
-        aria-controls="main-menu-list">
-        <span class="visually-hidden">Öppna meny</span>
-        </button>
-    
-        <ul id="main-menu-list" hidden>
-            <li><a href="#">Nyheter</a></li>
-            <li><a href="#">Lokalt</a></li>
-            <li><a href="#">Sport</a></li>
-            <li><a href="#">Utrikes</a></li>
+    <nav id="category-menu" hidden>
+        <ul>
+            <li><button class="cat-btn" data-category="general">Almänna nyheter</button></li>
+            <li><button class="cat-btn" data-category="nation">Utrikes</button></li>
+            <li><button class="cat-btn" data-category="technology">Teknik</button></li>
+            <li><button class="cat-btn" data-category="sports">Sport</button></li>
         </ul>
     </nav>
-    </header>
     <main>
         <section aria-label="Nyhetsartiklar">
             <div id="news-grid" class="news-grid"></div>
