@@ -1,6 +1,6 @@
 const NewsContainer = document.getElementById('news-container');
 const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('site-header');
+const searchInput = document.getElementById('site-search');
 const sectionTitle = document.getElementById('section-title');
 
 const categoryBtns = document.querySelectorAll('.cat-btn');
