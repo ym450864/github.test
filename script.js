@@ -18,7 +18,7 @@ async function getNews(category = 'general') {
       url.search = new URLSearchParams({
     lang: "sv",
     country: "se",
-    max: "10",
+    max: "4",
     q: "General",
     apikey: API_KEY
 });
@@ -132,4 +132,4 @@ menuBtn.addEventListener('click', () => {
     menuBtn.setAttribute('aria-expanded', String(!IsOpen));
 });
 
-//getNews();
+getNews();
