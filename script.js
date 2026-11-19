@@ -20,7 +20,7 @@ async function getNews(category = 'general') {
         );
 
         if (!response.ok) {
-            throw new Error ('Kunde inte hämta nyheter');
+            throw new Error ('Kunde inte hämta nyheter' + response.status);
         }
 
         const data = await response.json();
@@ -74,9 +74,9 @@ function displayNews(articles) {
 }
 
 categoryBtns.forEach(button => {
-    button.addEventListener('click', () =>
-   {
-    const category = button.CDATA_SECTION_NODE.category;
+    button.addEventListener('click', () => {
+    const category = button.dataset.category;
+
     sectionTitle.textContent = button.textContent;
 
     getNews(category);
@@ -119,7 +119,7 @@ searchForm.addEventListener('submit', async event => {
 menuBtn.addEventListener('click', () => {
     const IsOpen = menuBtn.getAttribute('Aria-expanded') === 'true';
     categoryMenu.hidden = IsOpen;
-    menuBtn.setAttribute('aria-expanded, !IsOpen');
+    menuBtn.setAttribute('aria-expanded', String(!IsOpen));
 });
 
 getNews();
