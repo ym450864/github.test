@@ -84,3 +84,52 @@
         }
     }
 }
+
+.news-card {
+    background-color: $card-bg;
+    border-radius: $radius;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    h3 {
+        font-family: $font-heading;
+        color: $primary-color;
+        margin-bottom: $spacing-sm;
+    }
+
+    p{
+        color: $text-muted;
+        margin-bottom: $spacing-md
+    }
+
+    a {
+        color: $accent-color;
+        font-family: $font-ui;
+        font-weight: bold;
+        text-decoration: none;
+    
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus-visible {
+        outline: 3px solid $focus-outline;
+        outline-offset: 3px;
+    }
+  }
+}
+
+.news-content {
+    padding: $spacing-md;
+}
